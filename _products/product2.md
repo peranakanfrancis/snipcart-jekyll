@@ -1,6 +1,7 @@
 ---
 identifier: white-1
 name: The White Noise 100
+weight: 1g
 price: 200
 image: /assets/images/irises.jpg
 ---
