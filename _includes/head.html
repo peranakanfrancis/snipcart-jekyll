@@ -10,8 +10,19 @@
   <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.0-beta.3/default/snipcart.css" />
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
-
-  <script src="https://www.paypal.com/sdk/js?client-id=Acfw__EJ1NOJENqRTlS_C9rX-CkxIxE8Ms98wvD-NU7uZF1nzzcDGOWsD7JXhD5xsheQPeXZOD_Kqloo&vault=true"></script>
-
   
-</head>
+   <script src="https://www.paypal.com/sdk/js?client-id=Acfw__EJ1NOJENqRTlS_C9rX-CkxIxE8Ms98wvD-NU7uZF1nzzcDGOWsD7JXhD5xsheQPeXZOD_Kqloo&vault=true"></script>
+
+      <div class="paypal-button" id="paypal-plan-container"></div>
+      <script>
+          paypal.Buttons({
+             createSubscription: function(data, actions) {
+               return actions.subscription.create({
+                 'plan_id': 'P-50L08135RP134160DLXQA4YI'
+               });
+             },
+             onApprove: function(data, actions) {
+               alert(data.subscriptionID);
+             }
+          }).render('#paypal-plan-container');
+   </script>
