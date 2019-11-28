@@ -8,19 +8,3 @@
   </div>
   <img src="{{ product.image }}" alt="{{ product.name }} product image" class="product__image">
 </div>
-
-
-      <div class="paypal-button" id="paypal-plan-container"></div>
-      <script>
-          paypal.Buttons({
-             createSubscription: function(data, actions) {
-               return actions.subscription.create({
-                 'plan_id': 'P-8Y7287455M176990NLXQATXY'
-               });
-             },
-             onApprove: function(data, actions) {
-               alert(data.subscriptionID);
-             }
-          }).render('#paypal-plan-container');
-   </script>
-</body>
